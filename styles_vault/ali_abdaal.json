@@ -1,0 +1,21 @@
+{
+  "creator_name": "Ali Abdaal (Productivity & Study)",
+  "platform": "YouTube",
+  "aspect_ratio": "16:9",
+  "avg_cut_duration": 4.2,
+  "pacing_style": "ali_abdaal_cozy_minimalist",
+  "subtitle_style": {
+    "font_family": "Inter, SF Pro Display, sans-serif",
+    "font_size": 28,
+    "text_color": "#F8FAFC",
+    "highlight_color": "#38BDF8",
+    "stroke_color": "none",
+    "animation": "subtle_fade_up",
+    "safe_zone": "lower_third"
+  },
+  "color_grade": "warm-pastel-cozy-filmic",
+  "camera_motion": "gentle_push_in",
+  "sound_design": "gentle_mouse_click_lofi_whoosh",
+  "music_tempo": "lofi_study_beats_80bpm",
+  "broll_ratio": "50% aesthetic desk setup / 50% talking head"
+}

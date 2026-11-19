@@ -555,7 +555,99 @@ python3 scripts/studio.py inspect examples/vox_k_shape_recovery_ai_geopolitics_e
 python3 scripts/studio.py replicate "https://www.youtube.com/shorts/..." "5 Secret Habits of High Performers" "use GuyNeural voice, snappy cuts"</pre>
   </div>
 
-  <h2>15. Dual-Platform Operating Manual (Windows & macOS)</h2>
+  <h2>15. Production Formats & Themes (Shorts, Movies, Documentaries, Podcasts, Meetings, Social)</h2>
+  <p>Open Video Engine provides specialized presets for every common video content format:</p>
+  <ul>
+    <li><strong>Viral 9:16 Shorts / Reels / TikTok (<code>short</code>):</strong> High-retention cuts ($1.6\text{s} - 2.2\text{s}$), kinetic bouncing subtitles elevated in platform safe zones.</li>
+    <li><strong>16:9 Cinema Movies / Documentaries (<code>movie</code>):</strong> Moody 2.39:1 anamorphic letterbox, 35mm film grain, 12-frame audio J-Cuts.</li>
+    <li><strong>Tech & Knowledge Explainers (<code>documentary</code>):</strong> Vox data explainer style, 3D animated Three.js graphs, Manim formulas, paper textures.</li>
+    <li><strong>Podcast Video Beats & Interviews (<code>podcast</code>):</strong> Audio-reactive waveforms, talking head balance, dynamic speaker lower thirds.</li>
+    <li><strong>Video Meeting & Product Demo Recaps (<code>meeting</code>):</strong> Zoom/Meet recap cards, animated takeaway checkmarks, crisp typography.</li>
+    <li><strong>Social Announcements & Carousel Posts (<code>social</code>):</strong> 1:1 square or 4:5 portrait punchy cards for Instagram and LinkedIn.</li>
+  </ul>
+
+  <h2>16. Creator Style Vault & Multi-Video Profiler</h2>
+  <p>Archive and replicate the exact visual DNA of top YouTubers or your own custom brand identity:</p>
+  <div class="card">
+    <h3 style="margin-top:0;">Built-in Creator Style Signatures</h3>
+    <ul>
+      <li><strong>mrbeast:</strong> $1.6\text{s}$ hyper-retention cuts, Impact yellow text with black stroke, high-energy risers.</li>
+      <li><strong>alex_hormozi:</strong> $1.8\text{s}$ cuts, neon green/yellow word-by-word active spring captions, whip pans.</li>
+      <li><strong>vox_explainer:</strong> $3.2\text{s}$ cuts, 3D animated maps & charts, yellow marker highlighter reveal, ambient piano.</li>
+      <li><strong>ali_abdaal:</strong> $4.2\text{s}$ cuts, cozy pastel warm filmic tones, clean sans-serif text, aesthetic desk b-roll.</li>
+      <li><strong>mkbhd_tech:</strong> $2.8\text{s}$ cuts, matte black & red accents, 8K macro camera motion, electronic synthwave.</li>
+      <li><strong>veritasium_science:</strong> $5.0\text{s}$ cuts, 3D science simulations (Manim/Blender), deep narrative pacing.</li>
+    </ul>
+    <pre># View available creator styles in vault
+python3 scripts/studio.py styles
+
+# Apply any creator's style signature to your project
+python3 scripts/studio.py apply-style alex_hormozi
+
+# Scan multiple videos from any creator to build their custom DNA profile
+python3 scripts/creator_vault.py scan my_creator "Creator Name" &lt;url1&gt; &lt;url2&gt; &lt;url3&gt;</pre>
+  </div>
+
+  <h2>17. Execution Runtime Telemetry & Stuck-Agent Diagnostics</h2>
+  <p>To ensure no render or AI sub-agent gets quietly stuck during generation, the studio maintains an active observability system:</p>
+  <div class="card">
+    <p>Every sub-agent execution, tool invocation, and render milestone is logged to <code>logs/production_telemetry.log</code> and <code>logs/agent_diagnostics.json</code>.</p>
+    <pre># Run instant pipeline diagnostic check
+python3 scripts/studio.py logs</pre>
+    <p>If an error or stall occurs (missing Node package, unlinked FFmpeg, low disk space, network timeout), the diagnostic doctor identifies the exact stuck step and outputs an automated 1-click self-healing remedy.</p>
+  </div>
+
+  <h2>18. Step-by-Step Desktop Setup & Verification Guide (HP Pavilion & Mac)</h2>
+  <div class="card">
+    <h3 style="margin-top:0;">HP Pavilion Gaming PC / Windows Workstation (NVIDIA GPU)</h3>
+    <ol>
+      <li>Clone the repository: <code>git clone https://github.com/Bakulesh1Codes108/Complete-Local-Video-Studio-Engine-.git</code></li>
+      <li>Double-click <code>setup.bat</code>:
+        <ul>
+          <li>Authorizes environment configuration.</li>
+          <li>Scans drives (<code>C:</code>, <code>D:</code>, <code>E:</code>) and automatically junctions <code>out/</code> to <code>D:\OVE_Video_Renders</code> to protect your SSD.</li>
+          <li>Auto-installs Python 3.11, Node.js LTS, and portable FFmpeg.</li>
+          <li><strong>Auto-Detects NVIDIA GPU:</strong> Installs CUDA 12.1 PyTorch for hardware-accelerated 5-second voice cloning (F5-TTS) and local Ollama inference!</li>
+          <li>Runs AI Setup Doctor to self-heal any PATH conflicts.</li>
+        </ul>
+      </li>
+      <li>Double-click <code>Run_Studio.bat</code> to launch the NLE Studio at <code>http://127.0.0.1:8080/</code>.</li>
+      <li>To verify full health anytime, double-click <code>setup_doctor.bat</code>.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Apple Mac (Apple Silicon & Intel)</h3>
+    <ol>
+      <li>Terminal: <code>python3 -m venv .venv && source .venv/bin/activate</code></li>
+      <li>Install dependencies: <code>pip install -r requirements.txt && npm install</code></li>
+      <li>Run health check: <code>python3 scripts/studio.py doctor --fix</code></li>
+      <li>Launch studio: <code>python3 scripts/studio.py ove 8080</code></li>
+    </ol>
+  </div>
+
+  <h2>19. Architectural Blueprint & Super-Prompt Specification for Future AI Tools (Claude, GPT-4o, Gemini)</h2>
+  <div class="card">
+    <p>This repository is architected with strict, deterministic schema contracts to make future enhancements by AI models (such as Claude 3.5 Sonnet, Claude Opus, GPT-4o, or Gemini 2.0 Pro) completely frictionless:</p>
+    <ul>
+      <li><strong>Timeline Contract (<code>timeline.json</code>):</strong> Deterministic JSON containing <code>project</code>, <code>fps</code>, <code>width</code>, <code>height</code>, <code>colorGrade</code>, and an array of <code>scenes</code> (each with <code>durationInFrames</code>, <code>voiceover</code>, <code>visual</code>, <code>subtitle</code>, <code>motion</code>, <code>higgsfieldMotion</code>, and <code>jCutFrames</code>).</li>
+      <li><strong>Memory Contract (<code>graphify-out/graph.json</code>):</strong> Persistent &lt;6 KB knowledge graph linking Scene, Entity, VisualAsset, and AudioAsset nodes with semantic edges (<code>TRANSITIONS_TO</code>, <code>DEPICTS</code>, <code>HAS_VOICEOVER</code>).</li>
+      <li><strong>Style Vault Contract (<code>styles_vault/&lt;creator_id&gt;.json</code>):</strong> Reusable creator DNA profiles containing aspect ratio, cut duration, typography styling, safe zone, and color LUTs.</li>
+      <li><strong>Remotion Compositions (<code>src/compositions/</code>):</strong> Frame-accurate React components parameterized by <code>timeline.json</code> props:
+        <ul>
+          <li><code>DocumentaryComposition.tsx</code>: 16:9 cinematic master with J-Cuts and Ken Burns motion.</li>
+          <li><code>VerticalV3.tsx</code>: 9:16 viral reel with platform safe-zone spring subtitles.</li>
+          <li><code>HiggsfieldCamera.tsx</code>: 3D camera motion rigs (Orbit 360, FPV Dive, Vertigo Zoom, Whip Pan).</li>
+          <li><code>ThreeJsScene.tsx</code>: WebGL procedural 3D elements (Globe, Quantum Particles, Bar Charts).</li>
+          <li><code>CinematicGrade.tsx</code>: DaVinci LUTs, 2.39:1 anamorphic bars, and 35mm grain.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Super-Prompt for Future AI Models:</strong><br>
+    <em>"You are an expert post-production engineer. Read <code>timeline.json</code> and <code>graphify-out/graph.json</code>. You can generate new scenes, adjust cut timings, switch DaVinci color LUTs, or create custom Remotion React components in <code>src/compositions/</code> while respecting the established JSON contracts and zero-cost offline fallbacks."</em></p>
+  </div>
+
+  <h2>20. Dual-Platform Operating Reference Table</h2>
   <table style="width:100%; border-collapse:collapse; margin-bottom:14px; font-size:9pt;">
     <thead>
       <tr style="background:#f1f5f9; text-align:left;">
@@ -581,7 +673,7 @@ python3 scripts/studio.py replicate "https://www.youtube.com/shorts/..." "5 Secr
     </tbody>
   </table>
 
-  <h2>16. Frequently Asked Questions</h2>
+  <h2>21. Frequently Asked Questions</h2>
   <div class="card">
     <strong>Q: How does the studio run on an 8GB RAM Mac without crashing?</strong><br>
     The studio runs in Cloud-Assisted Mode: Gemini 2.0 Flash / OpenRouter handles story arc planning, Pixabay delivers stock visuals, Edge-TTS synthesizes neural narration, and Remotion renders frame-accurately on CPU with zero GPU memory overhead.

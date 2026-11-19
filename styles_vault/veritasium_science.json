@@ -1,0 +1,21 @@
+{
+  "creator_name": "Veritasium (Derek Muller)",
+  "platform": "YouTube Science",
+  "aspect_ratio": "16:9",
+  "avg_cut_duration": 5.0,
+  "pacing_style": "veritasium_scientific_inquiry",
+  "subtitle_style": {
+    "font_family": "Futura, Trebuchet MS, sans-serif",
+    "font_size": 32,
+    "text_color": "#FFFFFF",
+    "highlight_color": "#F59E0B",
+    "stroke_color": "#000000",
+    "animation": "clean_fade",
+    "safe_zone": "lower_third"
+  },
+  "color_grade": "cinematic-35mm-natural",
+  "camera_motion": "slow_steadycam_orbit",
+  "sound_design": "cinematic_boom_clock_tick",
+  "music_tempo": "dramatic_orchestral_suspense_95bpm",
+  "broll_ratio": "80% Manim math, science simulation, lab footage / 20% host"
+}

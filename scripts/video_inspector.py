@@ -284,7 +284,28 @@ class VideoForensicInspector:
             print("   -> Pacing Cloner: Vox Explainer / Netflix Doc multi-layer J-Cuts")
 
         print("   -> Voice Talent: Microsoft Edge-TTS 'en-US-ChristopherNeural' or 'en-US-GuyNeural'")
+        
+        # Token & Quality Route Analysis
+        self.analyze_token_quality_routes(r)
         print("=" * 72)
+
+    def analyze_token_quality_routes(self, r: dict):
+        scenes_count = r.get("total_scenes_detected", 5)
+        raw_tokens = scenes_count * 55
+        compressed_tokens = int(raw_tokens * 0.35)
+        savings_pct = round(((raw_tokens - compressed_tokens) / raw_tokens) * 100)
+
+        print("\n💰 PRE-FLIGHT TOKEN ESTIMATE & QUALITY ROUTE ANALYSIS:")
+        print(f"   Estimated Generation Tokens: {raw_tokens} tokens (Compressible to {compressed_tokens} tokens, {savings_pct}% saved)")
+        print("\n   [Route 1]: 100% Free Zero-Token Offline Route ($0.00 / 0 Tokens)")
+        print("              • Engine: Local Ollama (Llama 3.2 / Qwen) / Rule Engine + Edge-TTS")
+        print("              • Quality: High | Cost: $0.00 | Privacy: 100% Offline | Token Savings: 100%")
+        print("   [Route 2]: Smart Cost-Optimized Hybrid Route (~$0.00010 / Video) [RECOMMENDED]")
+        print("              • Engine: Google Gemini 2.0 Flash / Groq Llama 3.3")
+        print("              • Quality: Studio Broadcast | Cost: $0.00010 | Token Savings: 65% via PromptCompressor")
+        print("   [Route 3]: Ultra-Fidelity Cinema Director Route (~$0.00350 / Video)")
+        print("              • Engine: OpenAI GPT-4o / Claude 3.5 Sonnet Flagship")
+        print("              • Quality: Nuanced Multi-Layer Hollywood Storytelling | Cost: $0.00350")
 
     def save_skeleton_recipe(self, r: dict):
         """Persists the video structural recipe in graphify-out for instant replication."""

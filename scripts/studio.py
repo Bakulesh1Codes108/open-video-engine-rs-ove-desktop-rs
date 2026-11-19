@@ -49,6 +49,8 @@ PDF_COMPILER = os.path.join(SCRIPTS_DIR, "compile_pdf.py")
 SETUP_DOCTOR = os.path.join(SCRIPTS_DIR, "setup_doctor.py")
 AGENT_CREATOR = os.path.join(SCRIPTS_DIR, "agent_creator.py")
 VIDEO_INSPECTOR = os.path.join(SCRIPTS_DIR, "video_inspector.py")
+CREATOR_VAULT = os.path.join(SCRIPTS_DIR, "creator_vault.py")
+TELEMETRY_LOGGER = os.path.join(SCRIPTS_DIR, "telemetry_logger.py")
 
 def run_cmd(args):
     return subprocess.run(args, cwd=BASE_DIR)
@@ -86,6 +88,10 @@ Usage:
   python3 scripts/studio.py manim [type] [id]           [3Blue1Brown math render: neural_network]
   python3 scripts/studio.py inspect <URL_or_path>       [Forensic Video Deconstruction: cuts, audio cadence & best tools]
   python3 scripts/studio.py replicate <URL_or_path> "<topic>" [tweaks] [Replicate video skeleton with custom topic & tweaks]
+  python3 scripts/studio.py styles                      [Creator Style Vault: MrBeast, Hormozi, Vox, Ali Abdaal, MKBHD]
+  python3 scripts/studio.py apply-style <creator_id>    [Apply creator visual style signature to timeline]
+  python3 scripts/studio.py scan-creator <id> "<Name>" <urls> [Scan multiple videos to learn creator editing DNA]
+  python3 scripts/studio.py logs                        [Runtime Telemetry & Stuck-Agent Diagnostic Doctor]
   python3 scripts/studio.py agent "<prompt>"            [Prompt-to-Process Agent & Parallel Multi-Worker Pipeline]
   python3 scripts/studio.py cost "<prompt>"             [Token Optimizer & Cost Estimator ($0.00 Free vs Paid)]
   python3 scripts/studio.py budget [max_usd]            [View or set hard ceiling token budget limit]
@@ -159,6 +165,16 @@ if __name__ == "__main__":
         stype = sys.argv[2] if len(sys.argv) > 2 else "neural_network"
         sid = sys.argv[3] if len(sys.argv) > 3 else "manim_01"
         run_cmd([sys.executable, MANIM_ENGINE, stype, sid])
+    elif cmd in ["styles", "creators", "vault"]:
+        run_cmd([sys.executable, CREATOR_VAULT, "list"])
+    elif cmd in ["apply-style", "style"]:
+        cid = sys.argv[2] if len(sys.argv) > 2 else "alex_hormozi"
+        run_cmd([sys.executable, CREATOR_VAULT, "apply", cid])
+    elif cmd == "scan-creator":
+        args = [sys.executable, CREATOR_VAULT, "scan"] + sys.argv[2:]
+        run_cmd(args)
+    elif cmd in ["logs", "telemetry", "stuck"]:
+        run_cmd([sys.executable, TELEMETRY_LOGGER])
     elif cmd in ["inspect", "analyze-video", "forensic"]:
         target = sys.argv[2] if len(sys.argv) > 2 else "examples/vox_k_shape_recovery_ai_geopolitics_explainer.mp4"
         run_cmd([sys.executable, VIDEO_INSPECTOR, "inspect", target])

@@ -1,0 +1,21 @@
+{
+  "creator_name": "MrBeast (Jimmy Donaldson)",
+  "platform": "YouTube / Shorts",
+  "aspect_ratio": "9:16",
+  "avg_cut_duration": 1.6,
+  "pacing_style": "mrbeast_retention_hook",
+  "subtitle_style": {
+    "font_family": "Komika Axis, Impact, Arial Black, sans-serif",
+    "font_size": 48,
+    "text_color": "#FFEA00",
+    "stroke_color": "#000000",
+    "stroke_width": 8,
+    "animation": "pop_bounce",
+    "safe_zone": "middle_third"
+  },
+  "color_grade": "vibrant-high-contrast",
+  "camera_motion": "fast_zoom_in",
+  "sound_design": "whoosh_impact_riser",
+  "music_tempo": "high_energy_140bpm",
+  "broll_ratio": "70% b-roll / 30% talking head"
+}

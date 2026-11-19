@@ -1,0 +1,22 @@
+{
+  "creator_name": "Alex Hormozi ($100M Leads)",
+  "platform": "Instagram Reels / TikTok / Shorts",
+  "aspect_ratio": "9:16",
+  "avg_cut_duration": 1.8,
+  "pacing_style": "alex_hormozi_viral_reel",
+  "subtitle_style": {
+    "font_family": "The Bold Font, Montserrat ExtraBold, sans-serif",
+    "font_size": 44,
+    "text_color": "#00FF66",
+    "highlight_color": "#FFFF00",
+    "stroke_color": "#000000",
+    "stroke_width": 6,
+    "animation": "word_by_word_active_spring",
+    "safe_zone": "elevated_safe_zone_32pct"
+  },
+  "color_grade": "crisp-modern-contrast",
+  "camera_motion": "whip_pan_w_punch_in",
+  "sound_design": "subtle_pop_click_cash_register",
+  "music_tempo": "heavy_bass_trap_120bpm",
+  "broll_ratio": "85% talking head with kinetic icons / 15% b-roll"
+}

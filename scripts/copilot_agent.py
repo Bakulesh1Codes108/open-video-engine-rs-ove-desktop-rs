@@ -157,11 +157,48 @@ class FilmCopilotAgent:
         print("\n🔹 [STEP 2/6: TIMELINE & GRAPHIFY STORYBOARD]")
         if interactive:
             format_choices = {
-                "16:9": "16:9 Widescreen (YouTube, Course Documentaries, Netflix Cinema)",
-                "9:16": "9:16 Vertical Reel (TikTok, Instagram Reels, YouTube Shorts)",
+                "short": "Viral 9:16 Short / Reel / TikTok (Hormozi, MrBeast pacing, safe-zone captions)",
+                "movie": "16:9 Cinema Movie / Netflix Documentary (Moody 2.39:1, J-Cuts, 35mm grain)",
+                "documentary": "16:9 Tech & Knowledge Documentary (Vox data explainer, 3D animated graphs)",
+                "podcast": "Podcast Video Beat & Interview (Waveforms, sound design, talking head)",
+                "meeting": "Video Meeting & Product Demo Recap (Key takeaways, animated bullet points)",
+                "social": "1:1 Square Social Post & Announcement (Instagram / LinkedIn punchy cards)",
                 "omni": "Dual Omni-Master (1-Click Dual Export for BOTH 16:9 Cinema & 9:16 Reel)"
             }
-            aspect = prompt_user("Which format and platform are you producing for?", default="16:9", choices=format_choices)
+            prod_mode = prompt_user("What type of production would you like to create?", default="short", choices=format_choices)
+
+            if prod_mode in ["short", "9:16"]:
+                aspect = "9:16"
+                pacing_choices = {
+                    "alex_hormozi_viral_reel": "Alex Hormozi Viral Reel (Fast 1.8s cuts, neon spring safe-zone captions)",
+                    "mrbeast_retention_hook": "MrBeast Fast Cut (Hyper-retention 1.6s cuts, impact pop subtitles)"
+                }
+                pacing = prompt_user("Which viral reel pacing would you like to clone?", default="alex_hormozi_viral_reel", choices=pacing_choices)
+            elif prod_mode in ["movie", "cinema"]:
+                aspect = "16:9"
+                pacing_choices = {
+                    "netflix-doc": "Netflix High-End Cinema (Moody 2.39:1 anamorphic, 35mm film grain, 12-frame J-Cuts)",
+                    "hollywood-epic": "Hollywood Blockbuster (Teal & Orange cinematic grade, dynamic motion)"
+                }
+                pacing = prompt_user("Which cinematic storytelling style matches your vision?", default="netflix-doc", choices=pacing_choices)
+            elif prod_mode == "documentary":
+                aspect = "16:9"
+                pacing = "vox_highlighter_explainer"
+            elif prod_mode == "podcast":
+                aspect = "16:9"
+                pacing = "vox_highlighter_explainer"
+            elif prod_mode == "meeting":
+                aspect = "16:9"
+                pacing = "vox_highlighter_explainer"
+            elif prod_mode == "social":
+                aspect = "1:1"
+                pacing = "alex_hormozi_viral_reel"
+            elif prod_mode == "omni":
+                aspect = "omni"
+                pacing = "vox_highlighter_explainer"
+            else:
+                aspect = "16:9"
+                pacing = "netflix-doc"
 
             if aspect == "9:16":
                 pacing_choices = {

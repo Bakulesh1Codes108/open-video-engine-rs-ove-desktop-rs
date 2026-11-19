@@ -1,0 +1,21 @@
+{
+  "creator_name": "Vox Media Explainer Style",
+  "platform": "YouTube Cinema / Widescreen",
+  "aspect_ratio": "16:9",
+  "avg_cut_duration": 3.2,
+  "pacing_style": "vox_highlighter_explainer",
+  "subtitle_style": {
+    "font_family": "Charter, Georgia, serif",
+    "font_size": 32,
+    "text_color": "#FFFFFF",
+    "highlight_color": "#FFEE55",
+    "stroke_color": "none",
+    "animation": "marker_highlighter_reveal",
+    "safe_zone": "lower_third"
+  },
+  "color_grade": "editorial-warm-documentary",
+  "camera_motion": "slow_pan_with_3d_parallax",
+  "sound_design": "paper_tear_typewriter_click",
+  "music_tempo": "ambient_minimal_piano_90bpm",
+  "broll_ratio": "90% animated 3D maps, charts, archival / 10% host"
+}

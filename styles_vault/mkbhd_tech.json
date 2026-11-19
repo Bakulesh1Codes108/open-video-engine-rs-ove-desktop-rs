@@ -1,0 +1,21 @@
+{
+  "creator_name": "Marques Brownlee (MKBHD)",
+  "platform": "YouTube",
+  "aspect_ratio": "16:9",
+  "avg_cut_duration": 2.8,
+  "pacing_style": "mkbhd_matte_tech",
+  "subtitle_style": {
+    "font_family": "Helvetica Neue, Roboto, sans-serif",
+    "font_size": 30,
+    "text_color": "#FFFFFF",
+    "highlight_color": "#FF0033",
+    "stroke_color": "#111111",
+    "animation": "sleek_horizontal_slide",
+    "safe_zone": "lower_left_pill"
+  },
+  "color_grade": "matte-black-saturated-red",
+  "camera_motion": "robotic_slider_orbit",
+  "sound_design": "deep_sub_bass_drop",
+  "music_tempo": "future_beats_synthwave_105bpm",
+  "broll_ratio": "70% 8K macro camera B-roll / 30% studio desk"
+}

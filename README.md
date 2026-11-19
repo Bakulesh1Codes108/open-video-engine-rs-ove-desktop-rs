@@ -58,6 +58,20 @@ flowchart TD
 
 ---
 
+## ⚡ 1-Click Windows Setup & Storage Space Guidance
+If you are running on Windows:
+1. Double-click **`setup.bat`**:
+   * Requests transparent user authorization and permission.
+   * Scans all logical drives (`C:`, `D:`, `E:`) and guides you to store video renders on your largest drive (e.g. `D:\OVE_Video_Renders`) via NTFS junction.
+   * Auto-installs Node.js, Python 3.11, and FFmpeg (via winget or portable fallback).
+   * Configures `.venv` and installs video AI dependencies.
+   * Detects NVIDIA GPUs for CUDA hardware acceleration.
+   * Runs the autonomous AI Setup Doctor (`setup_doctor.py` / `setup_doctor.bat`) to self-heal any misconfigurations.
+2. Double-click **`Run_Studio.bat`** to launch the studio in your browser!
+3. Double-click **`setup_doctor.bat`** anytime for 1-click troubleshooting and health checks.
+
+---
+
 ## 🚀 Installation & Building from Source
 
 ### Prerequisites:

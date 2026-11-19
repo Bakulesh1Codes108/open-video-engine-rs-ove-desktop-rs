@@ -44,4 +44,12 @@ start "" /b cmd /c "timeout /t 2 /nobreak >nul && start http://127.0.0.1:8080/"
 :: Launch studio server
 "%REPO_DIR%.venv\Scripts\python.exe" "%REPO_DIR%scripts\studio.py" ove 8080
 
-pause
+if errorlevel 1 (
+    echo.
+    echo ======================================================================
+    echo [-] Studio encountered an issue or port was closed.
+    echo [*] Would you like to run the AI Setup Doctor to diagnose & repair?
+    echo ======================================================================
+    "%REPO_DIR%.venv\Scripts\python.exe" "%REPO_DIR%scripts\setup_doctor.py" --fix
+    pause
+)

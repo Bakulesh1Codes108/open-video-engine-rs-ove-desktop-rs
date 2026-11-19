@@ -48,6 +48,7 @@ UPSCALER = os.path.join(SCRIPTS_DIR, "upscaler.py")
 PDF_COMPILER = os.path.join(SCRIPTS_DIR, "compile_pdf.py")
 SETUP_DOCTOR = os.path.join(SCRIPTS_DIR, "setup_doctor.py")
 AGENT_CREATOR = os.path.join(SCRIPTS_DIR, "agent_creator.py")
+VIDEO_INSPECTOR = os.path.join(SCRIPTS_DIR, "video_inspector.py")
 
 def run_cmd(args):
     return subprocess.run(args, cwd=BASE_DIR)
@@ -83,6 +84,8 @@ Usage:
   python3 scripts/studio.py fetch-media <id> "<query>" [Fetch Pixabay/Pexels stock media]
   python3 scripts/studio.py blender [type] [title]      [Headless 3D Blender render: 3d_chrome_title]
   python3 scripts/studio.py manim [type] [id]           [3Blue1Brown math render: neural_network]
+  python3 scripts/studio.py inspect <URL_or_path>       [Forensic Video Deconstruction: cuts, audio cadence & best tools]
+  python3 scripts/studio.py replicate <URL_or_path> "<topic>" [tweaks] [Replicate video skeleton with custom topic & tweaks]
   python3 scripts/studio.py agent "<prompt>"            [Prompt-to-Process Agent & Parallel Multi-Worker Pipeline]
   python3 scripts/studio.py cost "<prompt>"             [Token Optimizer & Cost Estimator ($0.00 Free vs Paid)]
   python3 scripts/studio.py budget [max_usd]            [View or set hard ceiling token budget limit]
@@ -156,6 +159,19 @@ if __name__ == "__main__":
         stype = sys.argv[2] if len(sys.argv) > 2 else "neural_network"
         sid = sys.argv[3] if len(sys.argv) > 3 else "manim_01"
         run_cmd([sys.executable, MANIM_ENGINE, stype, sid])
+    elif cmd in ["inspect", "analyze-video", "forensic"]:
+        target = sys.argv[2] if len(sys.argv) > 2 else "examples/vox_k_shape_recovery_ai_geopolitics_explainer.mp4"
+        run_cmd([sys.executable, VIDEO_INSPECTOR, "inspect", target])
+    elif cmd in ["replicate", "clone-video", "copy-video"]:
+        args = [sys.executable, VIDEO_INSPECTOR, "replicate"] + sys.argv[2:]
+        run_cmd(args)
+    elif cmd in ["skeleton", "recipe"]:
+        skel = os.path.join(BASE_DIR, "graphify-out", "video_skeleton.json")
+        if os.path.exists(skel):
+            with open(skel, "r", encoding="utf-8") as f:
+                print(f.read())
+        else:
+            print("No video skeleton loaded yet. Run: python3 scripts/studio.py inspect <URL_or_path>")
     elif cmd in ["cost", "tokens", "pricing"]:
         prompt = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "A cinematic 3-act documentary scene about underwater hydrothermal vents"
         run_cmd([sys.executable, MODEL_ROUTER, "cost", prompt])

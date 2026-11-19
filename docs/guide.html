@@ -525,7 +525,37 @@ python3 scripts/studio.py budget 0.00</pre>
     <p><strong>Continuous Learning Memory:</strong> Learned user preferences (aspect ratio, narration voice, color grades, cut speed) are cached in <code>graphify-out/learning_cache.json</code> and automatically applied to future videos.</p>
   </div>
 
-  <h2>14. Dual-Platform Operating Manual (Windows & macOS)</h2>
+  <h2>14. Video Link Provision Agent, Forensic Inspector & Skeleton Replicator</h2>
+  <p>If you discover a viral video, reel, or documentary online, you can paste its link directly into Open Video Engine to deconstruct every piece and replicate its structural skeleton with custom content:</p>
+
+  <div class="card">
+    <h3 style="margin-top:0;">1. Direct Link Acquisition & Deep Forensic Deconstruction</h3>
+    <p>Accepts YouTube, YouTube Shorts, TikTok, Instagram Reels, Twitter, or local MP4 files. The agent extracts:</p>
+    <ul>
+      <li><strong>Dimensions & Aspect Ratio:</strong> Identifies 9:16 Vertical Reel vs 16:9 Widescreen.</li>
+      <li><strong>Cut Boundaries & Pacing Rhythm:</strong> Detects scene cut timestamps and average shot duration (e.g. fast 1.8s viral cuts vs 4.5s documentary pacing).</li>
+      <li><strong>Audio Cadence & Speech Pauses:</strong> Measures speech rhythm and background audio ducking via FFmpeg <code>silencedetect</code>.</li>
+      <li><strong>Visual Style & Color Grade:</strong> Analyzes color palette, DaVinci LUT, and subtitle safe zones.</li>
+    </ul>
+    <pre># Inspect any online video link or local MP4
+python3 scripts/studio.py inspect "https://www.youtube.com/shorts/..."
+# Or inspect local file
+python3 scripts/studio.py inspect examples/vox_k_shape_recovery_ai_geopolitics_explainer.mp4</pre>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">2. Pre-Flight Best Tools Advisory</h3>
+    <p>Before launching render engines, the agent inspects the video skeleton and prescribes the exact suite of tools needed to reproduce it (e.g., Remotion VerticalV3, Three.js 3D charts, Edge-TTS GuyNeural, and Teal-and-Orange LUTs).</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">3. Skeleton Memory & Custom Replication with Slight Tweaks</h3>
+    <p>The structural skeleton is preserved in <code>graphify-out/video_skeleton.json</code>. You can replicate the viral pacing and camera motions 1:1 while replacing narration and visuals with your new topic:</p>
+    <pre># Replicate video skeleton with new premise and tweaks
+python3 scripts/studio.py replicate "https://www.youtube.com/shorts/..." "5 Secret Habits of High Performers" "use GuyNeural voice, snappy cuts"</pre>
+  </div>
+
+  <h2>15. Dual-Platform Operating Manual (Windows & macOS)</h2>
   <table style="width:100%; border-collapse:collapse; margin-bottom:14px; font-size:9pt;">
     <thead>
       <tr style="background:#f1f5f9; text-align:left;">
@@ -551,7 +581,7 @@ python3 scripts/studio.py budget 0.00</pre>
     </tbody>
   </table>
 
-  <h2>15. Frequently Asked Questions</h2>
+  <h2>16. Frequently Asked Questions</h2>
   <div class="card">
     <strong>Q: How does the studio run on an 8GB RAM Mac without crashing?</strong><br>
     The studio runs in Cloud-Assisted Mode: Gemini 2.0 Flash / OpenRouter handles story arc planning, Pixabay delivers stock visuals, Edge-TTS synthesizes neural narration, and Remotion renders frame-accurately on CPU with zero GPU memory overhead.

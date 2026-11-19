@@ -5,3 +5,8 @@ Cargo.lock
 .DS_Store
 *.log
 out/
+__pycache__/
+*.pyc
+.venv/
+token_budget_ledger.json
+graphify-out/

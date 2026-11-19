@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unified Video Studio Engine & Antigravity Studio — Complete Production Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+        font-size: 9pt;
+        color: #718096;
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      background: #ffffff;
+      line-height: 1.55;
+      font-size: 10pt;
+    }
+    h1, h2, h3, h4 {
+      color: #0f172a;
+      font-weight: 700;
+      page-break-after: avoid;
+    }
+    h1 {
+      font-size: 24pt;
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #0f172a;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 12pt;
+      color: #475569;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: 14pt;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      color: #1e3a8a;
+    }
+    h3 {
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: #0369a1;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 8pt;
+      font-weight: 600;
+      border-radius: 4px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+    .badge-green {
+      background: #f0fdf4;
+      color: #15803d;
+      border-color: #bbf7d0;
+    }
+    .badge-purple {
+      background: #faf5ff;
+      color: #7e22ce;
+      border-color: #e9d5ff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 8.5pt;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      overflow-x: auto;
+      margin: 8px 0 14px 0;
+      page-break-inside: avoid;
+      line-height: 1.45;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 8.5pt;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+    .card {
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 9pt;
+    }
+    .card-warn {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎬 Open Video Engine (OVE) & Antigravity Video Studio</h1>
+  <div class="subtitle">Complete Autonomous AI Video Production Guide & Technical Architecture (Verified 2026 Edition)</div>
+
+  <div style="margin-bottom: 16px;">
+    <span class="badge badge-green">100% Free & Open-Source</span>
+    <span class="badge">Remotion + Three.js + Blender</span>
+    <span class="badge badge-purple">Open Higgsfield 3D Rigs</span>
+    <span class="badge">Vertical V3 Reels</span>
+    <span class="badge badge-green">Zero-Shot 5s Voice Cloning</span>
+    <span class="badge">LosslessCut Stream Engine</span>
+    <span class="badge badge-purple">OVE Copilot Assistant</span>
+    <span class="badge">Defensively Audited</span>
+  </div>
+
+  <h2>1. Executive Summary & Purpose</h2>
+  <p>
+    <strong>Open Video Engine (OVE)</strong> (also unified as Antigravity Video Studio) is a production-grade, zero-cost, code-driven video production studio engineered to create high-retention <strong>16:9 Cinematic Documentaries</strong> and <strong>9:16 Viral Reels</strong> (TikTok, Instagram Reels, YouTube Shorts) without monthly subscriptions, cloud API charges, or watermarks.
+  </p>
+  <p>
+    Unlike conventional video generators that dump gigabytes of redundant dependencies or require expensive GPU cloud clusters, Open Video Engine operates under a strict <strong>Zero-Bloat JIT (Just-In-Time) Architecture</strong>. The repository footprint remains under 20 MB, orchestrating heavyweight local engines (NVIDIA CUDA, Blender headless, Ollama) and lightweight cloud fallbacks dynamically.
+  </p>
+
+  <h2>2. Hardware & Dual-Machine Production Strategy</h2>
+  <p>
+    The studio is specifically tailored for cross-platform dual-machine creators (e.g., an 8GB Intel Core i5 Mac + an HP Pavilion Gaming laptop with NVIDIA GPU):
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Production Stage</th>
+        <th>Mac Intel i5 (8GB RAM, ~14GB Free)</th>
+        <th>HP Pavilion Gaming (NVIDIA GPU, CUDA)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Script & Arc Planning</strong></td>
+        <td>Cloud Gemini 2.0 Flash / OpenRouter Free</td>
+        <td>Local Ollama (Llama 3.2 / Qwen 2.5 CUDA)</td>
+      </tr>
+      <tr>
+        <td><strong>Visual Media Acquisition</strong></td>
+        <td>Pixabay / Pexels / Wikimedia (Zero-Cost API)</td>
+        <td>Pixabay / Fooocus SDXL Local Generation</td>
+      </tr>
+      <tr>
+        <td><strong>Voiceover Generation</strong></td>
+        <td>Microsoft Edge-TTS (0 MB disk, 0% CPU)</td>
+        <td>Edge-TTS or Kokoro-82M Offline</td>
+      </tr>
+      <tr>
+        <td><strong>5-Second Voice Cloning</strong></td>
+        <td>Cloud Neural Fallback</td>
+        <td><strong>F5-TTS / MOSS-TTS (GPU Accelerated)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>3D Headless Renders</strong></td>
+        <td>Blender CPU / Procedural Three.js</td>
+        <td><strong>Blender OptiX / CUDA GPU Accelerated</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Remotion Rendering</strong></td>
+        <td>Headless Remotion Node.js CPU</td>
+        <td><strong>NVIDIA Hardware Accelerated MP4</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2>3. The Unified Multi-Engine Render Architecture</h2>
+  <p>The studio unifies multiple industry-leading open-source technologies into one pipeline:</p>
+
+  <ul>
+    <li><strong>Remotion Core (React + TypeScript):</strong> Deterministic frame-accurate canvas for 4K Ken Burns, layout scaling, and multi-track audio ducking.</li>
+    <li><strong>Open Higgsfield 3D Camera Rigs:</strong> Transforms static media and 3D scenes using physical camera physics (<code>orbit_360</code>, <code>fpv_drone_dive</code>, <code>vertigo_dolly_zoom</code>, <code>whip_pan</code>, <code>crane_up_reveal</code>, <code>bullet_time_freeze</code>).</li>
+    <li><strong>Three.js 3D Procedural Scenes:</strong> Built-in holographic Earth globe (<code>3d_rotating_globe</code>), quantum particle waves (<code>3d_quantum_particles</code>), and animated financial bar charts (<code>3d_financial_chart</code>).</li>
+    <li><strong>Blender Headless 3D Engine:</strong> Python CLI automation for photorealistic 3D chrome titles and product turntables without GUI overhead.</li>
+    <li><strong>Manim Engine:</strong> 3Blue1Brown-style mathematical formula morphs and neural network animations.</li>
+  </ul>
+
+  <h2>4. Vertical V3 Architecture (9:16 Shorts & Reels)</h2>
+  <p>
+    Standard video renderers place subtitles at the bottom of the screen, where they are obscured by TikTok, Instagram Reels, and YouTube Shorts UI overlays (sound title, captions, like/comment buttons).
+  </p>
+  <div class="card">
+    <strong>Key Innovations of Vertical V3:</strong>
+    <ul>
+      <li><strong>Platform Safe-Zone Positioning:</strong> Subtitles are automatically elevated (~32% from bottom) so they are 100% visible across all mobile apps.</li>
+      <li><strong>Kinetic Word-by-Word Highlight:</strong> Words pop in real-time with vibrant <code>#FFEE00</code> neon yellow highlight boxes, impact typography, and thick black strokes as they are spoken (Hormozi / MrBeast style).</li>
+      <li><strong>Smart Dual-Layer Blur Pad:</strong> If 16:9 landscape assets are used, the engine automatically creates a blurred, saturated ambient background fill behind the sharp, centered foreground visual.</li>
+      <li><strong>Top-Edge Retention Progress Bar:</strong> A smooth gradient progress bar tracks video completion across the top edge to maximize viewer watch-time.</li>
+    </ul>
+  </div>
+
+  <h2>5. Omni-Master Dual-Export & 1-Click Format Conversion</h2>
+  <p>
+    You no longer need to produce separate projects for YouTube and TikTok. The <strong>Omni-Master</strong> workflow produces both from a single prompt:
+  </p>
+  <pre><code># 1-Click format conversion anytime:
+python3 scripts/studio.py convert 9:16    # Converts current project to 9:16 Vertical Reel
+python3 scripts/studio.py convert 16:9   # Converts current project to 16:9 Widescreen Cinema
+
+# Or prompt the memory graph directly in natural language:
+python3 scripts/studio.py edit "switch to 9:16 vertical reel"</code></pre>
+
+  <h2>6. Zero-Shot 5-Second Voice Cloning</h2>
+  <p>
+    To narrate your documentaries or reels in your own voice, drop a 5-second clean recording into <code>assets/voice_samples/my_voice.wav</code>:
+  </p>
+  <pre><code># On your HP Pavilion Gaming PC (NVIDIA CUDA):
+pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install f5-tts
+
+# Execute voice clone for all scenes:
+python3 scripts/studio.py clone-voice
+# Or run with audio flag:
+python3 scripts/studio.py audio --clone</code></pre>
+
+  <div class="page-break"></div>
+
+  <h2>7. Video Reverse-Engineering & Lossless Editing</h2>
+  <p>
+    Incorporates the design patterns of <strong>nexu-io/openmotion</strong>, <strong>PySceneDetect</strong>, and <strong>mifi/lossless-cut</strong>:
+  </p>
+  <pre><code># 1. Reverse-engineer any reference video into an editable Remotion timeline:
+python3 scripts/studio.py reverse-engineer reference_reel.mp4 "Tech Breakthrough"
+
+# 2. Lossless Stream Concatenation (joins rendered MP4s in milliseconds with 0 re-encoding):
+python3 scripts/studio.py concat out/scene_01.mp4 out/scene_02.mp4 out/scene_03.mp4
+
+# 3. Precision Lossless Trimming:
+python3 scripts/studio.py cut input.mp4 0.0 5.4
+
+# 4. Dynamic 4K Super-Resolution Upscaling:
+python3 scripts/studio.py upscale assets/visuals/scene_01.jpg</code></pre>
+
+  <h2>8. The JIT On-Demand Engine Hub & Model Advisor</h2>
+  <p>
+    Instead of downloading 50+ GB of model weights upfront, the studio keeps the core repository under 20 MB and manages external engines on demand:
+  </p>
+  <pre><code># Inspect all available engines and their hardware compute requirements:
+python3 scripts/studio.py hub
+
+# Ask the in-built AI advisor for the best production stack:
+python3 scripts/studio.py advise "generate a 5-minute sci-fi short film"</code></pre>
+
+  <h2>9. Pro Desktop NLE Studio UI & 10 Popular Suite Themes</h2>
+  <p>
+    The studio features a commercial-grade, paid-application-style Non-Linear Editor (<code>python3 scripts/studio.py app</code>) with 10 instant 1-click theme presets modeled after industry favorites across India and globally:
+  </p>
+  <ul>
+    <li><strong>🟡 DaVinci Resolve Studio:</strong> Warm amber/gold palette, 3-way Lift/Gamma/Gain color wheels, 35mm film grain, and 2.39:1 anamorphic framing.</li>
+    <li><strong>🔵 CapCut Creator Neon:</strong> Electric cyan accents and high-contrast dark mode tailored for viral short-form pacing.</li>
+    <li><strong>🔷 Adobe Premiere Pro:</strong> Classic broadcast slate-and-blue interface with multi-track NLE timeline layout.</li>
+    <li><strong>🍏 Apple Final Cut Pro X:</strong> Magnetic timeline aesthetic, graphite panels, and frictionless visual skimming.</li>
+    <li><strong>⚡ VN Video Editor:</strong> Slate-and-turquoise creator styling favored by Indian smartphone and desktop creators.</li>
+    <li><strong>🍃 Wondershare Filmora:</strong> Emerald green accents with beginner-friendly layout and quick social presets.</li>
+    <li><strong>🟣 Adobe After Effects:</strong> Deep purple motion graphics suite with 3D procedural scene inspectors (Three.js Earth / Quantum particles).</li>
+    <li><strong>💖 InShot & KineMaster:</strong> Vibrant coral pink social vlog layout with sticker layers and mobile safe-zone guides.</li>
+    <li><strong>🎬 Avid Media Composer:</strong> Hollywood broadcast darkroom interface with precision timecode and audio meters.</li>
+    <li><strong>🤖 vidyo.ai & Clipchamp:</strong> Electric indigo AI SaaS aesthetic with automated video repurposing and safe-zone snapping.</li>
+  </ul>
+  <div class="card">
+    <strong>🤖 Live Corner AI Copilot & Mid-Flight Customization:</strong><br>
+    A persistent AI assistant docks in the bottom-right corner. It monitors active pipeline stages, tracks remaining steps (e.g. <code>Step 3 of 6 • 3 remaining</code>), suggests context-aware enhancements (4K upscaling, TikTok safe zones, voice cloning), and allows live mid-flight chatting to reconfigure parameters without stopping playback.
+  </div>
+
+  <h2>10. Master CLI Command Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>python3 scripts/studio.py app</code></td>
+        <td>Launch Pro Desktop NLE Studio UI with 10 switchable software themes.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py copilot</code></td>
+        <td>Interactive executive producer interview (format, pacing, narrator).</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py step &lt;step&gt; "&lt;topic&gt;"</code></td>
+        <td>Execute strictly up to step: <code>script|timeline|media|audio|preview|render</code>.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py vertical [preset] "&lt;topic&gt;"</code></td>
+        <td>1-Click 9:16 Vertical V3 viral reel generator (Hormozi, MrBeast, Vox).</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py convert [16:9|9:16]</code></td>
+        <td>Instantly switch active project between Widescreen and Vertical.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py reverse-engineer &lt;video&gt;</code></td>
+        <td>OpenMotion + PySceneDetect reference video cloning.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py concat &lt;file1&gt; &lt;file2&gt; ...</code></td>
+        <td>Lossless stream concatenation via FFmpeg concat demuxer (0 re-encoding).</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py cut &lt;file&gt; &lt;start&gt; &lt;end&gt;</code></td>
+        <td>Lossless precision trimming at keyframe boundaries.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py upscale &lt;image&gt;</code></td>
+        <td>4K super-resolution upscaling without storing 60GB raw caches.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py hub</code></td>
+        <td>Inspect on-demand engine catalog and JIT install commands.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py advise "&lt;goal&gt;"</code></td>
+        <td>Get optimal AI model & stack recommendations for short films.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py rpa</code></td>
+        <td>Launch visual node-based Robotic Process Automation studio in browser.</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py audio</code></td>
+        <td>Batch-synthesize Microsoft Neural voiceovers (Edge-TTS).</td>
+      </tr>
+      <tr>
+        <td><code>python3 scripts/studio.py clone-voice [sample]</code></td>
+        <td>Clone creator 5-second voice for all scenes (F5-TTS / MOSS-TTS).</td>
+      </tr>
+      <tr>
+        <td><code>npm run preview</code></td>
+        <td>Launch Remotion in-editor live player.</td>
+      </tr>
+      <tr>
+        <td><code>npm run render</code></td>
+        <td>Export broadcast-quality MP4 (auto-detects 16:9 Cinema or 9:16 Vertical).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2>11. Comparison: Unified Video Studio vs. Commercial SaaS Tools</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Unified Video Studio</th>
+        <th>CapCut Pro</th>
+        <th>Runway Gen-3</th>
+        <th>InVideo AI</th>
+        <th>ElevenLabs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pricing</strong></td>
+        <td><strong>100% Free & Open-Source</strong></td>
+        <td>$10–$20/mo</td>
+        <td>$15–$95/mo</td>
+        <td>$25–$60/mo</td>
+        <td>$5–$99/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Code & Script Automation</strong></td>
+        <td><strong>Full (CLI, React, Python)</strong></td>
+        <td>GUI only</td>
+        <td>Cloud prompt only</td>
+        <td>Web GUI only</td>
+        <td>API only</td>
+      </tr>
+      <tr>
+        <td><strong>Deterministic Render</strong></td>
+        <td><strong>Remotion (Frame-Accurate)</strong></td>
+        <td>Manual timeline</td>
+        <td>AI warp/jitter</td>
+        <td>Fixed templates</td>
+        <td>Audio only</td>
+      </tr>
+      <tr>
+        <td><strong>3D & Math Animations</strong></td>
+        <td><strong>Blender 3D + Three.js + Manim</strong></td>
+        <td>2D overlays only</td>
+        <td>Generative warp</td>
+        <td>Stock video only</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td><strong>Voice Cloning</strong></td>
+        <td><strong>5s Zero-Shot (F5-TTS, MOSS)</strong></td>
+        <td>Paid feature</td>
+        <td>No voice clone</td>
+        <td>Generic voices</td>
+        <td>High quality (Paid)</td>
+      </tr>
+      <tr>
+        <td><strong>Storage Footprint</strong></td>
+        <td><strong>&lt;20 MB (JIT On-Demand)</strong></td>
+        <td>1.5 GB app</td>
+        <td>Cloud hosted</td>
+        <td>Cloud hosted</td>
+        <td>Cloud hosted</td>
+      </tr>
+      <tr>
+        <td><strong>Watermarks & Limits</strong></td>
+        <td><strong>Zero Watermarks / Unlimited</strong></td>
+        <td>Watermarks on free</td>
+        <td>Token quotas</td>
+        <td>Watermarks & limits</td>
+        <td>Character limits</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>12. AI Setup Assistant, System Doctor & Multi-Drive Storage Guidance</h2>
+  <p>To ensure foolproof operation on any user laptop (HP Pavilion, ASUS, Dell, Lenovo, Apple Mac), Open Video Engine integrates an autonomous diagnostic assistant and storage protection system:</p>
+
+  <div class="card">
+    <h3 style="margin-top:0;">1. Multi-Drive Storage Space Protection (Protecting C: Drive)</h3>
+    <p>High-resolution 4K and 1080p video renders consume 2 GB to 10 GB of cache and frames. Windows laptops often have limited space on the OS SSD (<code>C:</code>) but hundreds of gigabytes on a secondary drive (<code>D:</code> or <code>E:</code>).</p>
+    <p>The <strong>Multi-Drive Storage Advisor</strong> (<code>scripts/device_advisor.py</code>) automatically scans all partitions and creates an instant NTFS directory junction:
+    <pre>mklink /J out D:\OVE_Video_Renders</pre>
+    All video exports and temp files flow seamlessly into your secondary drive without filling up your system drive.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">2. Autonomous AI Setup Doctor (setup_doctor.py & setup_doctor.bat)</h3>
+    <p>Detects missing runtimes, broken PATH variables, missing FFmpeg encoders, and CUDA driver configurations, providing 1-click automated self-healing:</p>
+    <pre># Run diagnostic check
+python3 scripts/studio.py doctor
+
+# Run automated self-healing repair
+python3 scripts/studio.py doctor --fix</pre>
+    <p>On Windows, users can simply double-click <code>setup_doctor.bat</code> anytime for instant diagnosis.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">3. Transparent User Permissions & NVIDIA Safety Guidelines</h3>
+    <p>Setup scripts request clear, upfront consent before modifying environment paths or installing packages. The entire studio complies with NVIDIA model safety and open-source verification practices: 100% free, local-first, zero telemetry, and zero malware.</p>
+  </div>
+
+  <h2>13. Token Optimizer, Costing Agent & Group Permission Controller</h2>
+  <p>To eliminate unexpected cloud charges and give creators fine-grained authority over every stage of production, Open Video Engine incorporates an integrated economic and authorization framework:</p>
+
+  <div class="card">
+    <h3 style="margin-top:0;">1. Token Costing Agent & Hard Budget Ceiling</h3>
+    <p>Tracks and calculates token expenditure across 7 model tiers, from 100% free offline local models to commercial cloud APIs:</p>
+    <ul>
+      <li><strong>Tier 0 ($0.00 Free):</strong> Local Ollama (Llama 3.2 / Qwen 2.5), OpenRouter Free Gateway, Edge-TTS, and deterministic rule engines.</li>
+      <li><strong>Tier 1 (Micro-Cost):</strong> Google Gemini 2.0 Flash (~$0.00008 per video) & Groq Llama 3.3 70B (~$0.00020 per video).</li>
+      <li><strong>Tier 2/3 (Commercial):</strong> OpenAI GPT-4o and Claude 3.5 Sonnet (~$0.002 to $0.004 per scene).</li>
+    </ul>
+    <p>Set a hard ceiling budget to guarantee you never overspend:</p>
+    <pre># View real-time cost estimate comparison
+python3 scripts/studio.py cost "Documentary on the Mariana Trench"
+
+# Set a hard dollar budget limit (e.g. $0.05 or $0.00 for strictly free mode)
+python3 scripts/studio.py budget 0.00</pre>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">2. Group Permission & Step-by-Step Approval</h3>
+    <p>Choose the level of autonomy your AI assistant possesses during production:</p>
+    <ul>
+      <li><strong>Group Permission Mode (<code>--permission group</code>):</strong> Automatically approves Steps 1 through 4 (Script, Timeline, Media, Audio), then pauses for human approval before rendering final video.</li>
+      <li><strong>Step-by-Step Mode (<code>--permission step</code>):</strong> Prompts for explicit creator authorization at every individual milestone.</li>
+      <li><strong>Autonomous Mode (<code>--permission auto</code>):</strong> Runs all 6 steps continuously without interruption for RPA scripts or automated pipelines.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">3. Prompt-to-Process Agent & Parallel Execution</h3>
+    <p>Decomposes any natural language video concept into a concurrent multi-agent graph. Visual media fetching and neural voiceover synthesis execute in parallel threads simultaneously:</p>
+    <pre>python3 scripts/studio.py agent "A high-retention 9:16 TikTok reel explaining quantum computing"</pre>
+    <p><strong>Continuous Learning Memory:</strong> Learned user preferences (aspect ratio, narration voice, color grades, cut speed) are cached in <code>graphify-out/learning_cache.json</code> and automatically applied to future videos.</p>
+  </div>
+
+  <h2>14. Dual-Platform Operating Manual (Windows & macOS)</h2>
+  <table style="width:100%; border-collapse:collapse; margin-bottom:14px; font-size:9pt;">
+    <thead>
+      <tr style="background:#f1f5f9; text-align:left;">
+        <th style="padding:6px; border:1px solid #cbd5e1;">Operating System</th>
+        <th style="padding:6px; border:1px solid #cbd5e1;">1-Click Setup</th>
+        <th style="padding:6px; border:1px solid #cbd5e1;">Launch Command</th>
+        <th style="padding:6px; border:1px solid #cbd5e1;">Hardware Acceleration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:6px; border:1px solid #cbd5e1;"><strong>Windows 10/11</strong><br>(HP, ASUS, Dell, Lenovo)</td>
+        <td style="padding:6px; border:1px solid #cbd5e1;">Double-click <code>setup.bat</code><br>(Auto winget, .venv, portable FFmpeg, and D: drive render junction)</td>
+        <td style="padding:6px; border:1px solid #cbd5e1;">Double-click <code>Run_Studio.bat</code><br>Or: <code>python scripts/studio.py ove</code></td>
+        <td style="padding:6px; border:1px solid #cbd5e1;">NVIDIA CUDA PyTorch (F5-TTS Voice Clone, OptiX Blender 3D, NVENC export)</td>
+      </tr>
+      <tr>
+        <td style="padding:6px; border:1px solid #cbd5e1;"><strong>macOS</strong><br>(Apple Silicon & Intel)</td>
+        <td style="padding:6px; border:1px solid #cbd5e1;"><code>python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && npm install</code></td>
+        <td style="padding:6px; border:1px solid #cbd5e1;"><code>python3 scripts/studio.py ove</code><br>(Opens UI on http://127.0.0.1:8080)</td>
+        <td style="padding:6px; border:1px solid #cbd5e1;">Apple Silicon Metal GPU & Cloud-Assisted low-RAM mode (Zero GPU memory overhead)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>15. Frequently Asked Questions</h2>
+  <div class="card">
+    <strong>Q: How does the studio run on an 8GB RAM Mac without crashing?</strong><br>
+    The studio runs in Cloud-Assisted Mode: Gemini 2.0 Flash / OpenRouter handles story arc planning, Pixabay delivers stock visuals, Edge-TTS synthesizes neural narration, and Remotion renders frame-accurately on CPU with zero GPU memory overhead.
+  </div>
+  <div class="card">
+    <strong>Q: How does Vertical V3 fix TikTok and Instagram subtitle obstruction?</strong><br>
+    Standard video editors pin subtitles at the screen bottom (where captions, sound titles, and like/comment buttons cover them). Vertical V3 elevates subtitles into the safe middle third (~32% from bottom) with kinetic active-word bouncing highlight boxes.
+  </div>
+  <div class="card">
+    <strong>Q: How do I export for both YouTube (16:9) and TikTok (9:16) simultaneously?</strong><br>
+    Choose the <code>omni</code> format in the copilot, or run <code>python3 scripts/studio.py convert 9:16</code> to convert between widescreen and vertical reels in one second.
+  </div>
+
+  <div style="margin-top: 24px; padding-top: 12px; border-top: 1px solid #cbd5e1; font-size: 8.5pt; color: #64748b; text-align: center;">
+    Unified Video Studio Engine &bull; Verified 2026 Production Edition &bull; Open-Source MIT License
+  </div>
+
+</body>
+</html>

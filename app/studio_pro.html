@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="davinci">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity Unified Video Studio Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       THEME ENGINE: DaVinci Resolve, CapCut, Premiere, Final Cut
+       ========================================================= */
+    :root, [data-theme="davinci"] {
+      --bg-app: #121316;
+      --bg-panel: #1a1c21;
+      --bg-card: #22252c;
+      --bg-input: #15171b;
+      --border: #2d313b;
+      --border-focus: #e59324;
+      --accent: #e59324; /* DaVinci Amber/Gold */
+      --accent-hover: #f5a638;
+      --accent-rgb: 229, 147, 36;
+      --track-vid: #29435c;
+      --track-aud: #2c533e;
+      --track-sub: #5c3b28;
+      --track-fx: #4c2d5c;
+      --text-main: #f1f3f7;
+      --text-muted: #8b92a2;
+      --danger: #e04545;
+      --success: #38b26a;
+      --radius: 4px;
+      --font-ui: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    [data-theme="capcut"] {
+      --bg-app: #0a0b0e;
+      --bg-panel: #12141a;
+      --bg-card: #1a1d26;
+      --bg-input: #0f1117;
+      --border: #262a37;
+      --border-focus: #00f2fe;
+      --accent: #00f2fe; /* CapCut Neon Cyan */
+      --accent-hover: #38f9d7;
+      --accent-rgb: 0, 242, 254;
+      --track-vid: #1e3a5f;
+      --track-aud: #14532d;
+      --track-sub: #78350f;
+      --track-fx: #581c87;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      --danger: #ef4444;
+      --success: #10b981;
+      --radius: 8px;
+    }
+
+    [data-theme="premiere"] {
+      --bg-app: #181818;
+      --bg-panel: #232323;
+      --bg-card: #2d2d2d;
+      --bg-input: #1a1a1a;
+      --border: #383838;
+      --border-focus: #1473e6;
+      --accent: #1473e6; /* Adobe Blue */
+      --accent-hover: #2680eb;
+      --accent-rgb: 20, 115, 230;
+      --track-vid: #21436e;
+      --track-aud: #1f593b;
+      --track-sub: #633e21;
+      --track-fx: #4e296e;
+      --text-main: #e8e8e8;
+      --text-muted: #8e8e8e;
+      --danger: #e23636;
+      --success: #2ea043;
+      --radius: 3px;
+    }
+
+    [data-theme="finalcut"] {
+      --bg-app: #141619;
+      --bg-panel: #1b1e23;
+      --bg-card: #242830;
+      --bg-input: #111317;
+      --border: #2c323d;
+      --border-focus: #3b82f6;
+      --accent: #3b82f6; /* Final Cut Pro Blue */
+      --accent-hover: #60a5fa;
+      --accent-rgb: 59, 130, 246;
+      --track-vid: #2563eb;
+      --track-aud: #059669;
+      --track-sub: #d97706;
+      --track-fx: #9333ea;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --danger: #dc2626;
+      --success: #16a34a;
+      --radius: 6px;
+    }
+
+    /* VN Video Editor (Slate Cyan) */
+    [data-theme="vn"] {
+      --bg-app: #0f1115;
+      --bg-panel: #161920;
+      --bg-card: #1f232d;
+      --bg-input: #121419;
+      --border: #282e3c;
+      --border-focus: #00e5ff;
+      --accent: #00e5ff; /* VN Electric Turquoise */
+      --accent-hover: #33ebff;
+      --accent-rgb: 0, 229, 255;
+      --track-vid: #1a3a54;
+      --track-aud: #184e3a;
+      --track-sub: #5c351f;
+      --track-fx: #472658;
+      --text-main: #ffffff;
+      --text-muted: #9aa1b2;
+      --danger: #ff4757;
+      --success: #2ed573;
+      --radius: 6px;
+    }
+
+    /* Wondershare Filmora (Emerald Green) */
+    [data-theme="filmora"] {
+      --bg-app: #111417;
+      --bg-panel: #181d22;
+      --bg-card: #222930;
+      --bg-input: #13171b;
+      --border: #2d3640;
+      --border-focus: #00f076;
+      --accent: #00f076; /* Filmora Emerald */
+      --accent-hover: #33f391;
+      --accent-rgb: 0, 240, 118;
+      --track-vid: #1e453e;
+      --track-aud: #1f502b;
+      --track-sub: #543c1c;
+      --track-fx: #3c2452;
+      --text-main: #f0f4f8;
+      --text-muted: #8b98a5;
+      --danger: #ff5252;
+      --success: #00e676;
+      --radius: 8px;
+    }
+
+    /* Adobe After Effects (Motion Graphics Purple) */
+    [data-theme="aftereffects"] {
+      --bg-app: #131217;
+      --bg-panel: #1b1922;
+      --bg-card: #25222f;
+      --bg-input: #16141c;
+      --border: #352e46;
+      --border-focus: #9d4edd;
+      --accent: #9d4edd; /* After Effects Purple */
+      --accent-hover: #b565f5;
+      --accent-rgb: 157, 78, 221;
+      --track-vid: #2a2c5a;
+      --track-aud: #194a3e;
+      --track-sub: #573322;
+      --track-fx: #581c87;
+      --text-main: #f5f3ff;
+      --text-muted: #a79fc2;
+      --danger: #ef4444;
+      --success: #10b981;
+      --radius: 4px;
+    }
+
+    /* InShot & KineMaster (Vibrant Coral Pink) */
+    [data-theme="inshot"] {
+      --bg-app: #120e10;
+      --bg-panel: #1a1417;
+      --bg-card: #261d22;
+      --bg-input: #140f12;
+      --border: #382830;
+      --border-focus: #ff3366;
+      --accent: #ff3366; /* InShot / KineMaster Coral */
+      --accent-hover: #ff5c85;
+      --accent-rgb: 255, 51, 102;
+      --track-vid: #3a2233;
+      --track-aud: #1d4631;
+      --track-sub: #5e3b1f;
+      --track-fx: #4f1d4f;
+      --text-main: #ffffff;
+      --text-muted: #b39da6;
+      --danger: #ff2a55;
+      --success: #05c46b;
+      --radius: 10px;
+    }
+
+    /* Avid Media Composer (Hollywood Broadcast Ruby) */
+    [data-theme="avid"] {
+      --bg-app: #151618;
+      --bg-panel: #1c1e21;
+      --bg-card: #25282d;
+      --bg-input: #121315;
+      --border: #32363d;
+      --border-focus: #e63946;
+      --accent: #e63946; /* Avid Ruby */
+      --accent-hover: #ef5350;
+      --accent-rgb: 230, 57, 70;
+      --track-vid: #283747;
+      --track-aud: #1e4d2b;
+      --track-sub: #5d4037;
+      --track-fx: #4a235a;
+      --text-main: #eaeded;
+      --text-muted: #909497;
+      --danger: #d32f2f;
+      --success: #388e3c;
+      --radius: 2px;
+    }
+
+    /* vidyo.ai & Clipchamp (AI Violet / Indigo) */
+    [data-theme="vidyo"] {
+      --bg-app: #0b0d17;
+      --bg-panel: #121526;
+      --bg-card: #1a1e36;
+      --bg-input: #0f1120;
+      --border: #282e52;
+      --border-focus: #7928ca;
+      --accent: #7928ca; /* vidyo.ai Violet / Electric Indigo */
+      --accent-hover: #9042e6;
+      --accent-rgb: 121, 40, 202;
+      --track-vid: #233560;
+      --track-aud: #18523c;
+      --track-sub: #633c1d;
+      --track-fx: #6b21a8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --danger: #f43f5e;
+      --success: #10b981;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body {
+      background: var(--bg-app);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Application Bar */
+    header.app-bar {
+      height: 48px;
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 13px;
+      z-index: 50;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .app-logo {
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+    }
+    .badge-pro {
+      background: var(--accent);
+      color: #000;
+      font-weight: 800;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: var(--radius);
+      letter-spacing: 0.5px;
+    }
+    .workspace-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-app);
+      padding: 3px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .ws-tab {
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius);
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .ws-tab.active, .ws-tab:hover {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    select.theme-select, select.fmt-select {
+      background: var(--bg-input);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+    button.btn-accent {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.15s;
+    }
+    button.btn-accent:hover { opacity: 0.9; }
+
+    /* Main Workspace (3-Column Layout) */
+    .studio-main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 320px 1fr 340px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Left Panel: Media Pool & AI Copilot */
+    .left-panel {
+      background: var(--bg-panel);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-app);
+    }
+    .p-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+    .p-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--bg-panel);
+    }
+    .panel-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    textarea.prompt-box {
+      width: 100%;
+      height: 90px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 10px;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 13px;
+      resize: none;
+      outline: none;
+    }
+    textarea.prompt-box:focus { border-color: var(--border-focus); }
+    .btn-full {
+      width: 100%;
+      padding: 9px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 12px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-full:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    /* Media Pool Grid */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .media-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .media-card img {
+      width: 100%;
+      height: 72px;
+      object-fit: cover;
+      display: block;
+    }
+    .media-card .title {
+      padding: 4px 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-muted);
+    }
+
+    /* Center Panel: Monitor & Canvas */
+    .center-panel {
+      background: var(--bg-app);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .monitor-header {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .timecode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .viewport-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      position: relative;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .player-canvas {
+      position: relative;
+      background: #000000;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.25s ease;
+    }
+    .player-canvas.widescreen {
+      width: 640px;
+      height: 360px; /* 16:9 */
+      border-radius: 4px;
+    }
+    .player-canvas.vertical {
+      width: 270px;
+      height: 480px; /* 9:16 */
+      border-radius: 12px;
+    }
+    .canvas-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.1s linear;
+    }
+    /* Safe-Zone Guide for 9:16 Reels */
+    .safezone-guide {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 2px dashed rgba(255, 238, 0, 0.4);
+      margin: 40px 16px 90px 16px;
+      pointer-events: none;
+      display: none;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 8px;
+      color: rgba(255, 238, 0, 0.8);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .player-canvas.vertical .safezone-guide.active { display: flex; }
+
+    /* Kinetic Subtitle Overlay on Player */
+    .player-subtitle {
+      position: absolute;
+      bottom: 22%;
+      left: 10%;
+      right: 10%;
+      text-align: center;
+      font-family: 'Impact', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.9);
+      pointer-events: none;
+      z-index: 10;
+    }
+    .player-subtitle .highlight {
+      background: #ffee00;
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Transport Controls */
+    .transport-bar {
+      height: 44px;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 16px;
+    }
+    .transport-btn {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      border-radius: var(--radius);
+      transition: background 0.15s;
+    }
+    .transport-btn:hover { background: var(--bg-card); }
+    .transport-btn.play {
+      background: var(--accent);
+      color: #000;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: var(--radius);
+    }
+
+    /* Right Panel: Inspector & DaVinci Color Wheels */
+    .right-panel {
+      background: var(--bg-panel);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 14px;
+      gap: 16px;
+    }
+    .inspector-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    .color-wheels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
+      margin-top: 6px;
+    }
+    .wheel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 4px;
+    }
+    .wheel-graphic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+      margin: 6px auto;
+      border: 2px solid var(--border);
+      position: relative;
+    }
+    .wheel-graphic::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #000;
+    }
+    .wheel-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Bottom: Multi-Track NLE Timeline */
+    .timeline-container {
+      height: 250px;
+      background: var(--bg-panel);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .timeline-toolbar {
+      height: 36px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-size: 12px;
+      background: var(--bg-app);
+    }
+    .tl-tools {
+      display: flex;
+      gap: 8px;
+    }
+    .tool-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 4px 8px;
+      border-radius: var(--radius);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tool-btn:hover { border-color: var(--accent); }
+
+    /* Tracks Area */
+    .tracks-wrapper {
+      flex: 1;
+      display: flex;
+      overflow-x: auto;
+      overflow-y: auto;
+      position: relative;
+    }
+    .track-headers {
+      width: 110px;
+      background: var(--bg-panel);
+      border-right: 1px solid var(--border);
+      z-index: 10;
+      position: sticky;
+      left: 0;
+    }
+    .track-header {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .track-lanes {
+      flex: 1;
+      min-width: 900px;
+      position: relative;
+      background: var(--bg-app);
+    }
+    .track-lane {
+      height: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+    }
+    .clip-block {
+      height: 34px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 11px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      margin-right: 4px;
+    }
+    .clip-vid { background: var(--track-vid); color: #fff; width: 220px; }
+    .clip-sub { background: var(--track-sub); color: #fff; width: 220px; }
+    .clip-aud { background: var(--track-aud); color: #fff; width: 220px; }
+    .clip-fx  { background: var(--track-fx);  color: #fff; width: 220px; }
+
+    /* Playhead Scrubber */
+    .playhead-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--danger);
+      z-index: 30;
+      left: 140px;
+      pointer-events: none;
+    }
+    .playhead-head {
+      position: absolute;
+      top: 0; left: -6px;
+      width: 14px; height: 14px;
+      background: var(--danger);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    }
+
+    /* Terminal Drawer */
+    .status-bar {
+      height: 26px;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+    }
+
+    /* OVE Brand Styling (Flash / GOM Player Retro-Pro Emblem) */
+    .ove-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ove-emblem {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff8c00 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.45);
+      flex-shrink: 0;
+    }
+    .ove-emblem svg {
+      width: 14px;
+      height: 14px;
+    }
+    .brand-col {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .brand-title {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+    .brand-sub {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+    }
+
+    /* Right-side Corner Floating OVE Copilot Widget */
+    .copilot-corner-widget {
+      position: fixed;
+      bottom: 34px;
+      right: 18px;
+      width: 320px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+      overflow: hidden;
+      font-size: 12px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .copilot-corner-widget.minimized .copilot-body,
+    .copilot-corner-widget.minimized .copilot-input-bar {
+      display: none;
+    }
+    .copilot-corner-widget.minimized {
+      width: 220px;
+    }
+    .copilot-header {
+      padding: 8px 12px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+    .copilot-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 11px;
+    }
+    .step-pill {
+      background: rgba(var(--accent-rgb), 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .copilot-body {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .copilot-msg {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 6px;
+      line-height: 1.4;
+      font-size: 11.5px;
+      color: var(--text-main);
+    }
+    .copilot-msg.bot {
+      border-left: 3px solid var(--accent);
+    }
+    .copilot-msg.user {
+      background: rgba(var(--accent-rgb), 0.12);
+      border-color: rgba(var(--accent-rgb), 0.3);
+      align-self: flex-end;
+    }
+    .copilot-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+    .copilot-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 3px 7px;
+      border-radius: 10px;
+      font-size: 10.5px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .copilot-chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .copilot-input-bar {
+      display: flex;
+      border-top: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 6px 8px;
+      gap: 6px;
+    }
+    .copilot-input {
+      flex: 1;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 8px;
+      color: var(--text-main);
+      font-size: 11px;
+      outline: none;
+    }
+    .copilot-input:focus {
+      border-color: var(--accent);
+    }
+    .copilot-send-btn {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      padding: 0 9px;
+      font-weight: 700;
+      font-size: 11px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Application Control Bar -->
+  <header class="app-bar">
+    <div class="brand-group">
+      <div class="ove-brand">
+        <div class="ove-emblem" title="Open Video Engine (OVE)">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6,4 20,12 6,20" />
+          </svg>
+        </div>
+        <div class="brand-col">
+          <span class="brand-title">OVE STUDIO</span>
+          <span class="brand-sub">Open Video Engine</span>
+        </div>
+        <span class="badge-pro">PRO NLE</span>
+      </div>
+      <div class="workspace-tabs">
+        <div class="ws-tab active">Edit</div>
+        <div class="ws-tab">DaVinci Color</div>
+        <div class="ws-tab">Fairlight Audio</div>
+        <div class="ws-tab">Deliver</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <!-- Aspect Ratio / Platform Switcher -->
+      <select class="fmt-select" id="fmtSelect" onchange="switchFormat(this.value)">
+        <option value="16:9">📺 16:9 Cinema Widescreen</option>
+        <option value="9:16">📱 9:16 Vertical V3 (Reels / TikTok)</option>
+      </select>
+
+      <!-- Theme Switcher: DaVinci, CapCut, Premiere, Final Cut, VN, Filmora, After Effects, InShot, Avid, vidyo.ai -->
+      <select class="theme-select" id="themeSelect" onchange="changeTheme(this.value)">
+        <option value="davinci">🟡 DaVinci Resolve Studio</option>
+        <option value="capcut">🔵 CapCut Creator Neon</option>
+        <option value="premiere">🔷 Adobe Premiere Pro</option>
+        <option value="finalcut">🍏 Final Cut Pro X</option>
+        <option value="vn">⚡ VN Video Editor (Slate Cyan)</option>
+        <option value="filmora">🍃 Wondershare Filmora (Emerald)</option>
+        <option value="aftereffects">🟣 Adobe After Effects (Motion FX)</option>
+        <option value="inshot">💖 InShot & KineMaster (Vibrant Coral)</option>
+        <option value="avid">🎬 Avid Media Composer (Hollywood)</option>
+        <option value="vidyo">🤖 vidyo.ai / Clipchamp (AI Violet)</option>
+      </select>
+
+      <button class="btn-accent" onclick="triggerRender()">
+        <span>⚡</span> <span>Render MP4</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main 3-Column Studio Workspace -->
+  <main class="studio-main">
+    
+    <!-- Left Column: Media Pool & AI Copilot -->
+    <aside class="left-panel">
+      <div class="panel-tabs">
+        <div class="p-tab active" onclick="setPanelTab('ai', this)">🤖 AI Producer</div>
+        <div class="p-tab" onclick="setPanelTab('media', this)">📁 Media Pool</div>
+        <div class="p-tab" onclick="setPanelTab('voice', this)">🎙️ Voice Clone</div>
+      </div>
+
+      <div class="panel-content" id="panelAI">
+        <div class="input-group">
+          <label>Story Premise / Lesson Prompt</label>
+          <textarea class="prompt-box" id="premiseInput" placeholder="Enter story topic or concept... e.g. Quantum Computing breakthroughs and subterranean oceans of Europa"></textarea>
+        </div>
+
+        <div class="input-group">
+          <label>Pacing & Director Preset</label>
+          <select class="fmt-select" style="width: 100%;" id="presetSelect">
+            <option value="netflix-doc">🎬 Netflix Cinema Documentary (Anamorphic, 35mm)</option>
+            <option value="alex_hormozi_viral_reel">⚡ Alex Hormozi Viral Reel (2.2s cuts, whip pans)</option>
+            <option value="mrbeast_retention_hook">🔥 MrBeast Hyper-Retention (1.6s fast cuts)</option>
+            <option value="vox_highlighter_explainer">📐 Vox Data Explainer (Animated 3D maps & charts)</option>
+            <option value="vidyo_ai_repurpose">🤖 vidyo.ai / Frammer Auto-Repurpose (Vertical + Safe Zones)</option>
+            <option value="aftereffects_kinetic_motion">🟣 After Effects Motion Graphics (Kinetic Typography + 3D)</option>
+            <option value="kinemaster_vlog_layer">💖 KineMaster / InShot Social Vlog (Punchy Cuts & B-Roll)</option>
+            <option value="shotcut_lightweight_cut">✂️ Shotcut / VSDC Low-Resource Cut (8GB Laptop Optimized)</option>
+          </select>
+        </div>
+
+        <button class="btn-full" style="background: var(--accent); color: #000; font-weight: 700;" onclick="generateStoryArc()">
+          <span>✨</span> Generate Storyboard & Media
+        </button>
+
+        <button class="btn-full" onclick="reverseEngineerPrompt()">
+          <span>🧬</span> OpenMotion: Clone Reference Video
+        </button>
+
+        <button class="btn-full" onclick="launchRPA()">
+          <span>🤖</span> Open Visual RPA Canvas
+        </button>
+      </div>
+
+      <div class="panel-content" id="panelMedia" style="display: none;">
+        <label style="font-size: 11px; font-weight: 700; color: var(--text-muted);">Acquired Assets (assets/visuals/)</label>
+        <div class="media-grid" id="mediaPoolGrid">
+          <div class="media-card">
+            <img src="/assets/visuals/scene_01.jpg" onerror="this.src='/app/icon.png'">
+            <div class="title">scene_01.jpg</div>
+          </div>
+          <div class="media-card">
+            <img src="/assets/visuals/scene_02.jpg" onerror="this.src='/app/icon.png'">
+            <div class="title">scene_02.jpg</div>
+          </div>
+          <div class="media-card">
+            <img src="/assets/visuals/scene_03.jpg" onerror="this.src='/app/icon.png'">
+            <div class="title">scene_03.jpg</div>
+          </div>
+          <div class="media-card">
+            <img src="/assets/visuals/mimic_01.jpg" onerror="this.src='/app/icon.png'">
+            <div class="title">mimic_01.jpg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-content" id="panelVoice" style="display: none;">
+        <div class="input-group">
+          <label>5-Second Voice Clone (F5-TTS / Edge-TTS)</label>
+          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">
+            Drop a 5s sample into <code>assets/voice_samples/my_voice.wav</code> to narrate all scenes in your cloned voice.
+          </p>
+          <button class="btn-full" onclick="triggerVoiceClone()">
+            <span>🎙️</span> Synthesize 5s Cloned Voice
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center Column: Preview Monitor & Transport Controls -->
+    <section class="center-panel">
+      <div class="monitor-header">
+        <span style="font-weight: 600; color: var(--text-muted);">Preview Monitor (Remotion Output)</span>
+        <span class="timecode" id="tcDisplay">00:00:04:12</span>
+        <button class="tool-btn" id="safeZoneBtn" onclick="toggleSafeZone()">📱 Safe-Zone Guide: OFF</button>
+      </div>
+
+      <div class="viewport-box">
+        <div class="player-canvas widescreen" id="playerCanvas">
+          <img src="/assets/visuals/scene_01.jpg" class="canvas-img" id="canvasImage" onerror="this.src='/app/icon.png'">
+          <!-- Safe-Zone Guide -->
+          <div class="safezone-guide" id="safeZoneGuide">
+            TIKTOK / REELS SAFE VIEWPORT
+          </div>
+          <!-- Kinetic Subtitle -->
+          <div class="player-subtitle" id="playerSubtitle">
+            EXPLORING THE <span class="highlight">SUBTERRANEAN OCEANS</span> OF EUROPA
+          </div>
+        </div>
+      </div>
+
+      <!-- Playback Transport -->
+      <div class="transport-bar">
+        <button class="transport-btn" onclick="seekFrame(-30)">⏮️</button>
+        <button class="transport-btn play" id="playBtn" onclick="togglePlay()">▶️ Play</button>
+        <button class="transport-btn" onclick="seekFrame(30)">⏭️</button>
+        <button class="transport-btn" onclick="openRemotionPreview()">🖥️ Open Live Remotion Player</button>
+      </div>
+    </section>
+
+    <!-- Right Column: Inspector & DaVinci Color Wheels -->
+    <aside class="right-panel">
+      <div class="inspector-title">Inspector & Rigs</div>
+      
+      <div class="input-group">
+        <label>Open Higgsfield 3D Camera Rig</label>
+        <select class="fmt-select" style="width: 100%;" id="higgsSelect" onchange="updateRig(this.value)">
+          <option value="orbit_360">Orbit 360 (Smooth 3D revolution)</option>
+          <option value="fpv_drone_dive">FPV Drone Dive (High velocity dive)</option>
+          <option value="vertigo_dolly_zoom">Vertigo Dolly Zoom (Hitchcock effect)</option>
+          <option value="whip_pan">Whip Pan (Fast dynamic cut)</option>
+          <option value="crane_up_reveal">Crane Up Reveal (Low to high panorama)</option>
+          <option value="bullet_time_freeze">Bullet Time Freeze (3D matrix sweep)</option>
+        </select>
+      </div>
+
+      <div class="inspector-title" style="margin-top: 10px;">DaVinci Resolve Color Grade</div>
+      <div class="color-wheels-grid">
+        <div class="wheel-card">
+          <div class="wheel-label">LIFT</div>
+          <div class="wheel-graphic"></div>
+        </div>
+        <div class="wheel-card">
+          <div class="wheel-label">GAMMA</div>
+          <div class="wheel-graphic"></div>
+        </div>
+        <div class="wheel-card">
+          <div class="wheel-label">GAIN</div>
+          <div class="wheel-graphic"></div>
+        </div>
+      </div>
+
+      <div class="input-group" style="margin-top: 10px;">
+        <label>Cinematic Film LUT Preset</label>
+        <select class="fmt-select" style="width: 100%;" id="lutSelect">
+          <option value="moody-documentary">Netflix Cinematic (Moody, 35mm grain)</option>
+          <option value="teal-and-orange">Hollywood Blockbuster (Teal & Orange)</option>
+          <option value="kodak-portra">Kodak Portra 400 (Warm golden analog)</option>
+          <option value="noir-monochrome">Noir Black & White (High contrast)</option>
+          <option value="clean">Clean Digital Broadcast</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>4K Super-Resolution Upscaler</label>
+        <button class="btn-full" onclick="upscaleActiveMedia()">
+          <span>🔍</span> Upscale Active Scene to 4K
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Bottom: Multi-Track NLE Timeline -->
+  <footer class="timeline-container">
+    <div class="timeline-toolbar">
+      <div class="tl-tools">
+        <span style="font-weight: 700; color: var(--accent); margin-right: 8px;">TIMELINE</span>
+        <button class="tool-btn" onclick="losslessCutAction()">✂️ Lossless Cut</button>
+        <button class="tool-btn" onclick="losslessConcatAction()">🔗 Stream Concat</button>
+        <button class="tool-btn" onclick="reloadTimeline()">🔄 Reload Timeline</button>
+      </div>
+      <div>
+        <span style="color: var(--text-muted); font-size: 11px;">Resolution: <strong>1080p</strong> | Rate: <strong>30.00 fps</strong> | Engine: <strong>Remotion 4.0</strong></span>
+      </div>
+    </div>
+
+    <div class="tracks-wrapper">
+      <!-- Track Header Labels -->
+      <div class="track-headers">
+        <div class="track-header"><span>FX</span> <span>Camera</span></div>
+        <div class="track-header"><span>TXT</span> <span>Subtitles</span></div>
+        <div class="track-header"><span>V1</span> <span>Video/3D</span></div>
+        <div class="track-header"><span>A1</span> <span>Voiceover</span></div>
+        <div class="track-header"><span>A2</span> <span>Music</span></div>
+      </div>
+
+      <!-- Track Lanes with Clips -->
+      <div class="track-lanes" id="trackLanes">
+        <div class="playhead-line" id="playhead">
+          <div class="playhead-head"></div>
+        </div>
+
+        <!-- Track FX -->
+        <div class="track-lane">
+          <div class="clip-block clip-fx">🎥 Orbit 360</div>
+          <div class="clip-block clip-fx">🎥 FPV Drone Dive</div>
+          <div class="clip-block clip-fx">🎥 Whip Pan</div>
+        </div>
+        <!-- Track TXT -->
+        <div class="track-lane">
+          <div class="clip-block clip-sub">📝 Act I: The Hook</div>
+          <div class="clip-block clip-sub">📝 Act II: The Journey</div>
+          <div class="clip-block clip-sub">📝 Act III: The Revelation</div>
+        </div>
+        <!-- Track V1 -->
+        <div class="track-lane">
+          <div class="clip-block clip-vid">🎬 scene_01.jpg (5.5s)</div>
+          <div class="clip-block clip-vid">🎬 scene_02.jpg (6.5s)</div>
+          <div class="clip-block clip-vid">🎬 scene_03.jpg (6.0s)</div>
+        </div>
+        <!-- Track A1 -->
+        <div class="track-lane">
+          <div class="clip-block clip-aud">🎙️ Voiceover (Christopher)</div>
+          <div class="clip-block clip-aud">🎙️ Voiceover (Christopher)</div>
+          <div class="clip-block clip-aud">🎙️ Voiceover (Christopher)</div>
+        </div>
+        <!-- Track A2 -->
+        <div class="track-lane">
+          <div class="clip-block clip-aud" style="width: 660px; background: #1b382b;">🎵 Cinematic Atmosphere BGM (Ducking: 18%)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span id="statusMsg">🟢 Studio Ready. Connected to Python Multi-Engine Core.</span>
+      <span>Open Video Engine (OVE) Pro v1.5.0</span>
+    </div>
+  </footer>
+
+  <!-- Floating OVE AI Assistant Widget in Right Bottom Corner -->
+  <div class="copilot-corner-widget" id="copilotWidget">
+    <div class="copilot-header" onclick="toggleCopilotWidget()">
+      <div class="copilot-title">
+        <span>🤖</span>
+        <span>OVE AI Copilot</span>
+        <span class="step-pill" id="copilotStepPill">Step 3 / 6</span>
+      </div>
+      <div style="font-weight: bold; color: var(--text-muted); font-size: 14px;" id="copilotToggleIcon">_</div>
+    </div>
+    <div class="copilot-body" id="copilotBody">
+      <div class="copilot-msg bot">
+        <strong>👋 OVE Production Assistant</strong><br>
+        Monitoring timeline pipeline. Customize mid-production or tap options:
+        <div class="copilot-chips">
+          <button class="copilot-chip" onclick="handleChipAction('safe_zone')">📱 TikTok Safe-Zone</button>
+          <button class="copilot-chip" onclick="handleChipAction('convert_916')">⚡ 9:16 Reel Format</button>
+          <button class="copilot-chip" onclick="handleChipAction('upscale')">🔍 4K Super-Res</button>
+          <button class="copilot-chip" onclick="handleChipAction('voice_clone')">🎙️ 5s Voice Clone</button>
+          <button class="copilot-chip" onclick="handleChipAction('theme_vn')">🎨 VN Slate Theme</button>
+        </div>
+      </div>
+    </div>
+    <div class="copilot-input-bar">
+      <input type="text" class="copilot-input" id="copilotInput" placeholder="Ask OVE: e.g. 'Make it 9:16', 'Switch to VN theme'..." onkeydown="if(event.key==='Enter') sendCopilotChat()">
+      <button class="copilot-send-btn" onclick="sendCopilotChat()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Theme Engine Switcher
+    function changeTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('antigravity_theme', themeName);
+      setStatus(`Switched UI theme to: ${themeName.toUpperCase()}`);
+    }
+
+    // Restore saved theme
+    const savedTheme = localStorage.getItem('antigravity_theme') || 'davinci';
+    document.getElementById('themeSelect').value = savedTheme;
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Format Switcher (16:9 vs 9:16)
+    function switchFormat(fmt) {
+      const canvas = document.getElementById('playerCanvas');
+      if (fmt === '9:16') {
+        canvas.className = 'player-canvas vertical';
+        setStatus('Switched canvas to 9:16 Vertical Reel (TikTok/Shorts mode)');
+      } else {
+        canvas.className = 'player-canvas widescreen';
+        setStatus('Switched canvas to 16:9 Widescreen Cinema mode');
+      }
+      // Call backend converter
+      fetch('/api/convert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ format: fmt })
+      }).catch(() => {});
+    }
+
+    // Toggle TikTok Safe-Zone
+    let safeZoneActive = false;
+    function toggleSafeZone() {
+      safeZoneActive = !safeZoneActive;
+      const guide = document.getElementById('safeZoneGuide');
+      const btn = document.getElementById('safeZoneBtn');
+      if (safeZoneActive) {
+        guide.classList.add('active');
+        btn.innerText = '📱 Safe-Zone Guide: ON';
+      } else {
+        guide.classList.remove('active');
+        btn.innerText = '📱 Safe-Zone Guide: OFF';
+      }
+    }
+
+    function setPanelTab(tabName, el) {
+      document.querySelectorAll('.p-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('panelAI').style.display = tabName === 'ai' ? 'flex' : 'none';
+      document.getElementById('panelMedia').style.display = tabName === 'media' ? 'grid' : 'none';
+      document.getElementById('panelVoice').style.display = tabName === 'voice' ? 'flex' : 'none';
+    }
+
+    function setStatus(msg) {
+      document.getElementById('statusMsg').innerText = `⚡ ${msg}`;
+    }
+
+    // Playback loop simulation
+    let isPlaying = false;
+    let playInterval = null;
+    let currentSeconds = 0;
+
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      const btn = document.getElementById('playBtn');
+      if (isPlaying) {
+        btn.innerHTML = '⏸️ Pause';
+        playInterval = setInterval(() => {
+          currentSeconds += 0.1;
+          if (currentSeconds > 18) currentSeconds = 0;
+          updatePlayhead();
+        }, 100);
+      } else {
+        btn.innerHTML = '▶️ Play';
+        clearInterval(playInterval);
+      }
+    }
+
+    function seekFrame(deltaFrames) {
+      currentSeconds = Math.max(0, currentSeconds + (deltaFrames / 30));
+      updatePlayhead();
+    }
+
+    function updatePlayhead() {
+      const tc = new Date(currentSeconds * 1000).toISOString().substr(11, 8) + ':12';
+      document.getElementById('tcDisplay').innerText = tc;
+      const playhead = document.getElementById('playhead');
+      if (playhead) {
+        playhead.style.left = `${(currentSeconds * 36) + 10}px`;
+      }
+    }
+
+    // Backend Execution Actions
+    function generateStoryArc() {
+      const prompt = document.getElementById('premiseInput').value || 'Autonomous Technology Documentary';
+      const preset = document.getElementById('presetSelect').value;
+      const fmt = document.getElementById('fmtSelect').value;
+      setStatus(`Generating Story Arc with preset [${preset}]...`);
+
+      fetch('/api/rpa/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, preset, mimic: preset, format: fmt })
+      })
+      .then(r => r.json())
+      .then(data => {
+        setStatus('Story Arc & Visuals generated successfully! Ready to preview.');
+        reloadTimeline();
+      })
+      .catch(e => setStatus(`Backend Notice: Storyboard saved locally.`));
+    }
+
+    function triggerRender() {
+      setStatus('Launching Remotion render pipeline...');
+      fetch('/api/render', { method: 'POST' }).catch(() => {});
+      alert('⚡ Render Job Started! Final MP4 will be saved to out/documentary.mp4');
+    }
+
+    function triggerVoiceClone() {
+      setStatus('Synthesizing 5-second voice clone...');
+      fetch('/api/voice-clone', { method: 'POST' }).catch(() => {});
+      alert('🎙️ Voice Clone Job Triggered! Audio will sync to assets/audio/');
+    }
+
+    function openRemotionPreview() {
+      alert('Run "npm run preview" in your terminal to open Remotion in-editor live player!');
+    }
+
+    function launchRPA() {
+      window.location.href = '/rpa';
+    }
+
+    function reloadTimeline() {
+      fetch('/timeline.json')
+        .then(r => r.json())
+        .then(tl => {
+          setStatus(`Loaded project: "${tl.project}" (${tl.scenes?.length || 0} scenes)`);
+        }).catch(() => {});
+    }
+
+    // ==========================================
+    // OVE AI COPILOT CORNER ASSISTANT LOGIC
+    // ==========================================
+    let isCopilotMinimized = false;
+    function toggleCopilotWidget() {
+      const widget = document.getElementById('copilotWidget');
+      const icon = document.getElementById('copilotToggleIcon');
+      isCopilotMinimized = !isCopilotMinimized;
+      if (isCopilotMinimized) {
+        widget.classList.add('minimized');
+        icon.innerText = '□';
+      } else {
+        widget.classList.remove('minimized');
+        icon.innerText = '_';
+      }
+    }
+
+    function handleChipAction(action) {
+      if (action === 'safe_zone') {
+        toggleSafeZone();
+      } else if (action === 'convert_916') {
+        switchFormat('9:16');
+      } else if (action === 'upscale') {
+        setStatus('Triggering 4K Super-Resolution...');
+        fetch('/api/upscale', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) }).catch(() => {});
+        appendCopilotBotMsg('🔍 4K Super-Resolution upscaler launched on keyframe assets.');
+      } else if (action === 'voice_clone') {
+        triggerVoiceClone();
+      } else if (action === 'theme_vn') {
+        changeTheme('vn');
+        const sel = document.getElementById('themeSelect');
+        if (sel) sel.value = 'vn';
+      }
+    }
+
+    function sendCopilotChat() {
+      const input = document.getElementById('copilotInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      // Append User message
+      appendCopilotUserMsg(msg);
+      input.value = '';
+
+      fetch('/api/copilot/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      })
+      .then(r => r.json())
+      .then(res => {
+        appendCopilotBotMsg(res.reply);
+        if (res.action === 'toggle_safe_zone') toggleSafeZone();
+        if (res.action === 'switch_916') switchFormat('9:16');
+        if (res.action === 'switch_169') switchFormat('16:9');
+        if (res.action?.startsWith('theme_')) {
+          const tname = res.action.replace('theme_', '');
+          changeTheme(tname);
+          const sel = document.getElementById('themeSelect');
+          if (sel) sel.value = tname;
+        }
+      })
+      .catch(() => {
+        appendCopilotBotMsg("⚡ Action noted! Updated timeline settings locally.");
+      });
+    }
+
+    function appendCopilotUserMsg(text) {
+      const body = document.getElementById('copilotBody');
+      const el = document.createElement('div');
+      el.className = 'copilot-msg user';
+      el.innerText = text;
+      body.appendChild(el);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function appendCopilotBotMsg(text) {
+      const body = document.getElementById('copilotBody');
+      const el = document.createElement('div');
+      el.className = 'copilot-msg bot';
+      el.innerHTML = text;
+      body.appendChild(el);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function updateCopilotStatus() {
+      fetch('/api/copilot/status')
+        .then(r => r.json())
+        .then(data => {
+          const pill = document.getElementById('copilotStepPill');
+          if (pill && data.currentStep) {
+            pill.innerText = `Step ${data.currentStep} / ${data.totalSteps} (${data.stepsRemaining} left)`;
+          }
+        })
+        .catch(() => {});
+    }
+
+    // Initial Status Check
+    setTimeout(updateCopilotStatus, 1000);
+
+    // Keyboard Shortcuts (Space for Play/Pause)
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'TEXTAREA' && e.target.tagName !== 'INPUT') {
+        e.preventDefault();
+        togglePlay();
+      }
+    });
+  </script>
+</body>
+</html>

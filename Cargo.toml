@@ -1,0 +1,42 @@
+[package]
+name = "open-video-engine-rs"
+version = "1.0.0"
+edition = "2021"
+authors = ["Bakulesh <https://github.com/Bakulesh1Codes108>"]
+description = "Ultra-Fast, High-Performance Native Rust Desktop Engine & Server for Open Video Engine (OVE)"
+license = "MIT"
+repository = "https://github.com/Bakulesh1Codes108/open-video-engine-rs-ove-desktop-rs"
+keywords = ["video-editor", "remotion", "ffmpeg", "rust", "desktop-app"]
+
+[[bin]]
+name = "ove"
+path = "src/main.rs"
+
+[dependencies]
+# Asynchronous Runtime & Networking
+tokio = { version = "1.38", features = ["full"] }
+axum = { version = "0.7", features = ["json", "tokio"] }
+tower-http = { version = "0.5", features = ["cors", "fs", "trace"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Command Line Interface
+clap = { version = "4.5", features = ["derive"] }
+
+# Logging & Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Utilities
+regex = "1.10"
+open = "5.1"
+walkdir = "2.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

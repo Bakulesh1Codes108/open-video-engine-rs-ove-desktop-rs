@@ -1,0 +1,12 @@
+# ==========================================================
+# Open Video Engine (OVE) - NVIDIA GPU Acceleration Dependencies
+# (For HP Pavilion Gaming, RTX laptops, and CUDA Workstations)
+#
+# Prerequisite:
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+# ==========================================================
+
+f5-tts>=0.2.0
+kokoro-onnx>=0.2.0
+realesrgan>=0.3.0
+soundfile>=0.12.1

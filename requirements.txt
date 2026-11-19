@@ -1,0 +1,10 @@
+# ==========================================================
+# Open Video Engine (OVE) - Core Python Dependencies
+# Lightweight, 100% Free & Fast (Runs smoothly on 8GB laptops)
+# ==========================================================
+
+edge-tts>=6.1.10
+requests>=2.31.0
+pillow>=10.0.0
+pywebview>=4.4.0
+yt-dlp>=2024.0.0

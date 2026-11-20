@@ -51,6 +51,7 @@ AGENT_CREATOR = os.path.join(SCRIPTS_DIR, "agent_creator.py")
 VIDEO_INSPECTOR = os.path.join(SCRIPTS_DIR, "video_inspector.py")
 CREATOR_VAULT = os.path.join(SCRIPTS_DIR, "creator_vault.py")
 TELEMETRY_LOGGER = os.path.join(SCRIPTS_DIR, "telemetry_logger.py")
+LAB_REPORT = os.path.join(SCRIPTS_DIR, "lab_report.py")
 
 def run_cmd(args):
     return subprocess.run(args, cwd=BASE_DIR)
@@ -115,6 +116,7 @@ Usage:
   python3 scripts/studio.py upscale <image_path>        [4K super-resolution upscaler]
   python3 scripts/studio.py hub                         [On-demand engine catalog & JIT installer]
   python3 scripts/studio.py advise "<goal>"             [AI stack & model advisor for 5-min films]
+  python3 scripts/studio.py lab                         [Run Monthly Laboratory Hardware & Token Benchmark Report]
   python3 scripts/studio.py pdf                         [Compile & render verified PDF production guide]
   python3 scripts/studio.py preview                     [Open in-editor Remotion Player]
   python3 scripts/studio.py render                      [Render broadcast MP4 (Auto-detects 16:9 or 9:16)]
@@ -361,6 +363,8 @@ if __name__ == "__main__":
         run_cmd([sys.executable, ENGINE_HUB, "advise", goal])
     elif cmd in ["pdf", "compile-pdf"]:
         run_cmd([sys.executable, PDF_COMPILER])
+    elif cmd in ["lab", "lab-report", "moth-lab", "benchmark"]:
+        run_cmd([sys.executable, LAB_REPORT])
     elif cmd in ["render-vertical", "render-reel"]:
         run_cmd(["npx", "remotion", "render", "src/index.ts", "VerticalV3", "out/vertical_reel.mp4"])
     elif cmd == "preview":
